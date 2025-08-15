@@ -20,6 +20,18 @@ body {
   margin-right: auto;
 }
 
+/* BARRA DE PROGRESSO DE ROLAGEM */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #ffffff, #666666);
+  z-index: 1000;
+  transition: width 0.1s ease;
+}
+
 .navbar {
   background-color: #000000;
   padding: 1rem;
@@ -86,6 +98,8 @@ nav ul li:hover {
 header {
   background-color: #c7c4c4;
 }
+
+/* ANIMAÇÃO PARA HERO SECTION */
 .header-button-side {
   display: flex;
   align-items: center;
@@ -96,19 +110,31 @@ header {
 .button-side-left {
   height: 100%;
   flex-basis: 50%;
+  animation: slideInLeft 1s ease-out;
+}
+
+.button-side-right {
+  flex-basis: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: slideInRight 1s ease-out;
 }
 
 .button-side-left h2 {
   font-size: 3.5rem;
   margin-bottom: 1.5rem;
   margin-top: -75px;
+  animation: fadeInUp 1.2s ease-out 0.3s both;
 }
 
 .button-side-left p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
   color: #333;
+  animation: fadeInUp 1.2s ease-out 0.6s both;
 }
+
 .button-side-left button {
   background-color: #000000;
   color: #ffffff;
@@ -116,22 +142,28 @@ header {
   border: none;
   cursor: pointer;
   font-size: 1rem;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
   border-radius: 9999px;
+  animation: fadeInUp 1.2s ease-out 0.9s both;
+  transform: translateY(20px);
+  opacity: 0;
 }
+
 .button-side-left button:hover {
   background-color: #434242;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
-.button-side-right {
-  flex-basis: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 .button-side-right img {
   width: 80%;
   height: auto;
   margin: 0%;
+  transition: transform 0.3s ease;
+}
+
+.button-side-right img:hover {
+  transform: scale(1.05);
 }
 
 /* Media Queries */
@@ -183,7 +215,7 @@ header {
   }
 }
 
-/* SEÇÃO DE PRODUTOS - CORRIGIDA */
+/* SEÇÃO DE PRODUTOS COM ANIMAÇÕES */
 .gray-background {
   background-color: #2c2c2c;
   padding: 3rem 0;
@@ -196,6 +228,15 @@ header {
   font-size: 2.5rem;
   font-weight: bold;
   color: white;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+/* Classe para quando o título fica visível */
+.catalogo.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .page-inner-content {
@@ -203,8 +244,6 @@ header {
   margin: 0 auto;
   padding: 0 2rem;
 }
-
-/* REMOVER as classes .cols e .cols-3 que estavam causando conflito */
 
 .produtos {
   display: grid;
@@ -214,18 +253,48 @@ header {
   align-items: start;
 }
 
+/* ANIMAÇÕES DOS PRODUTOS */
 .produto-item {
   padding: 0;
   background: white;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.4s ease;
+  
+  /* Estado inicial - invisível */
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+/* Animações diferentes para cada produto */
+.produto-item.fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.produto-item.slide-in-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.produto-item.slide-in-right {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+.produto-item.zoom-in {
+  animation: zoomIn 0.8s ease-out forwards;
+}
+
+.produto-item.bounce-in {
+  animation: bounceIn 1s ease-out forwards;
+}
+
+.produto-item.rotate-in {
+  animation: rotateIn 0.8s ease-out forwards;
 }
 
 .produto-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
 }
 
 .produtos img {
@@ -233,40 +302,138 @@ header {
   height: 350px;
   object-fit: cover;
   display: block;
+  transition: transform 0.4s ease;
 }
 
-.produto-item h3 {
+.produto-item:hover img {
+  transform: scale(1.1);
+}
+
+/* ESTILOS PARA .descricao1 */
+.descricao1 {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.descricao1 h3 {
   font-size: 1.5rem;
-  padding: 0;
   margin: 0.5rem 0;
-  text-align: center;
   color: #333;
+  transition: color 0.3s ease;
 }
-.produto-item p {
-  padding: 0;
-  font-size: 1rem;
+
+.produto-item:hover .descricao1 h3 {
+  color: #000;
+}
+
+.descricao1 p {
+  font-size: 0.9rem;
   color: #666;
-  text-align: center;
-  margin: 0.5rem 0;
+  margin: 0.3rem 0;
+  line-height: 1.4;
 }
-.produto-item span {
+
+.descricao1 span {
   font-size: 1.2rem;
-  padding: 0%;
   color: #000;
   font-weight: bold;
   display: block;
-  text-align: center;
-  margin: 0.5rem 0;
-  padding: 
-  0 1rem;
+  margin: 1rem 0;
 }
-.produto-item button {
-  background-color: #000;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border: none; }  
 
+.descricao1 button {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border-radius: 9999px;
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 150px;
+}
 
+.descricao1 button:hover {
+  background-color: #434242;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* DEFINIÇÃO DAS ANIMAÇÕES */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(50px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05) translateY(-10px);
+  }
+  70% {
+    transform: scale(0.95) translateY(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes rotateIn {
+  from {
+    opacity: 0;
+    transform: rotate(-15deg) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
 
 /* Responsividade para produtos */
 @media (max-width: 1024px) {
@@ -288,6 +455,18 @@ header {
   
   .page-inner-content {
     padding: 0 1rem;
+  }
+  
+  .produto-item:hover {
+    transform: translateY(-8px) scale(1.01);
+  }
+  
+  .descricao1 {
+    padding: 1rem;
+  }
+  
+  .descricao1 h3 {
+    font-size: 1.3rem;
   }
 }
 

@@ -1,14 +1,99 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./globals.css";
 
 export default function Home() {
   const [menuAberto, setMenuAberto] = useState(false);
 
+  useEffect(() => {
+    // BARRA DE PROGRESSO DE ROLAGEM
+    const updateScrollProgress = () => {
+      const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+      const progressBar = document.querySelector('.scroll-progress');
+      if (progressBar) {
+  
+      }
+    };
+
+    // OBSERVER PARA TÍTULO DO CATÁLOGO
+    const titleObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.5,
+      rootMargin: '0px 0px -100px 0px'
+    });
+
+    // OBSERVER PARA PRODUTOS COM ANIMAÇÕES DIFERENTES
+    const productObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          // Define diferentes animações baseado no índice
+          const animations = [
+            'fade-in-up', 'slide-in-left', 'slide-in-right', 
+            'zoom-in', 'bounce-in', 'rotate-in'
+          ];
+          
+          // Pega o índice real do produto na lista
+          const products = document.querySelectorAll('.produto-item');
+          const productIndex = Array.from(products).indexOf(entry.target);
+          const animationClass = animations[productIndex % animations.length];
+          
+          // Adiciona delay escalonado para efeito em cascata
+          setTimeout(() => {
+            entry.target.classList.add(animationClass);
+          }, productIndex * 150);
+          
+          productObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.2,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    // APLICAR OBSERVERS
+    const setupObservers = () => {
+      // Observar título do catálogo
+      const catalogTitle = document.querySelector('.catalogo');
+      if (catalogTitle) {
+        titleObserver.observe(catalogTitle);
+      }
+
+      // Observar todos os produtos
+      const products = document.querySelectorAll('.produto-item');
+      products.forEach(product => {
+        // Só adiciona observer se o produto tem conteúdo
+        if (product.querySelector('img')) {
+          productObserver.observe(product);
+        }
+      });
+    };
+
+    // Event listeners
+    window.addEventListener('scroll', updateScrollProgress);
+    
+    // Setup inicial com delay para garantir que o DOM está pronto
+    setTimeout(setupObservers, 100);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('scroll', updateScrollProgress);
+      titleObserver.disconnect();
+      productObserver.disconnect();
+    };
+  }, []);
+
   return (
     <>
+      {/* BARRA DE PROGRESSO */}
+      <div className="scroll-progress"></div>
+
       {/* Navbar */}
       <div className={`navbar ${menuAberto ? "show-menu" : ""}`}>
         <div className="header-inner-content">
@@ -77,84 +162,84 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Main - SEÇÃO CORRIGIDA */}
+      {/* Main - SEÇÃO COM ANIMAÇÕES */}
       <main>
         <div className="gray-background">
           <div className="page-inner-content">
             <h2 className="catalogo">Catálogo de Produtos</h2>
             
             <div className="produtos">
+              {/* Produto 1 - Body Milão */}
               <div className="produto-item">
                 <Image
                   src="/images/produto1.jpeg"
-                  alt="Produto 1"
+                  alt="Body Milão"
                   width={250}
                   height={350}
                 />
                 <div className="descricao1">
-                  <h3>Body Milão </h3>
-                  <p>Tamanho Unico 36-42</p>
-                  <p>Tecido Poliamida </p>
+                  <h3>Body Milão</h3>
+                  <p>Tamanho Único 36-42</p>
+                  <p>Tecido Poliamida</p>
                   <span>R$ 99,90</span>
                   <button>Comprar</button>
                 </div>
               </div>
               
+              {/* Produto 2 */}
               <div className="produto-item">
                 <Image
                   src="/images/produto5.jpeg"
                   alt="Produto 2"
                   width={250}
                   height={350}
-
                 />
-                 <div className="descricao1">
-                  <h3>Produto 1</h3>
-                  <p>Descrição do Produto 1</p>
-                  <span>R$ 99,90</span>
+                <div className="descricao1">
+                  <h3>Blusa Elegante</h3>
+                  <p>Tamanho Único 36-42</p>
+                  <p>Tecido Premium</p>
+                  <span>R$ 129,90</span>
                   <button>Comprar</button>
                 </div>
               </div>
               
+              {/* Produto 3 - Saia Jessica */}
               <div className="produto-item">
                 <Image
                   src="/images/produto3.jpeg"
-                  alt="Produto 3"
+                  alt="Saia Jessica"
                   width={250}
                   height={350}
                 />
-                 <div className="descricao1">
+                <div className="descricao1">
                   <h3>Saia Jessica</h3>
-                  <p>Tamanho Unico 36-42</p>
+                  <p>Tamanho Único 36-42</p>
                   <p>Tecido Poliamida</p>
-                
                   <span>R$ 99,90</span>
                   <button>Comprar</button>
                 </div>
               </div>
               
+              {/* Produto 4 - Saia Gisele */}
               <div className="produto-item">
                 <Image
                   src="/images/produto7.jpeg"
-                  alt="Produto 4"
+                  alt="Saia Gisele"
                   width={250}
                   height={350}
-
                 />
-                 <div className="descricao1">
+                <div className="descricao1">
                   <h3>Saia Gisele</h3>
-                  <p>Tamanho Unico 36-42</p>
+                  <p>Tamanho Único 36-42</p>
                   <p>Tecido Poliamida</p>
                   <span>R$ 99,90</span>
                   <button>Comprar</button>
                 </div>
               </div>
 
-              <div className="produto-item">
-                
-              </div>
-
-              {/* Adicione mais produtos aqui */}
+              {/* Produto vazio removido para não interferir nas animações */}
+              
+              {/* Adicione mais produtos aqui seguindo a mesma estrutura */}
             </div>
           </div>
         </div>
