@@ -479,56 +479,48 @@ header {
 }
 
 footer {
-  background-color: #000000;
-  color: #ffffff;
-  text-align: center;
-  padding: 1rem;
-  position: relative;
-  bottom: 0;
-  width: 100%;
+    background-color: #000000;  /* Cor de fundo */
+    color: #ffffff;              /* Cor do texto */
+    text-align: center;          /* Centraliza o texto */
+    padding: 1rem;               /* Espaçamento interno */
+    position: relative;
+    width: 100%;                 /* Preenche toda a largura */
 }
-logo-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1rem;
+
+.logo-footer {
+    display: flex;
+    justify-content: center;      /* Centraliza horizontalmente */
+    align-items: center;
+    margin-bottom: 1rem;         /* Espaço abaixo da logo */
+}
+
+.footer-content img {
+    width: 50px;                 /* Tamanho da logo */
+    height: auto;                /* Mantém a proporção */
+}
+
+.siga {
+    margin: 0.5rem 0;           /* Espaço acima e abaixo do texto */
+}
+
+.footer-links {
+    display: flex;               /* Alinha ícones lado a lado */
+    justify-content: center;     /* Centraliza horizontalmente */
+    gap: 1rem;                  /* Espaço entre os ícones */
+    margin-top: 0.5rem;         /* Espaço acima dos ícones */
+}
+
+.footer-links img {
+    width: 24px;                /* Tamanho dos ícones */
+    height: 24px;               /* Tamanho dos ícones */
+    transition: transform 0.3s ease; /* Efeito de hover */
+}
+
+.footer-links img:hover {
+    transform: scale(1.1);      /* Efeito de zoom ao passar o mouse */
 }
 
 footer p {
-  margin: 0;
-  font-size: 0.9rem;
+    margin: 0.5rem 0;           /* Espaço acima e abaixo do texto de copyright */
+    font-size: 0.9rem;          /* Tamanho da fonte do copyright */
 }
-footer a {
-  color: #ffffff;
-  text-decoration: none;
-} 
-.footer-links {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 0.5rem;
-}
-.footer-links a {
-  color: #ffffff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-.footer-content img {
-  width: 24px;
-  height: 24px;
-  transition: transform 0.3s ease;
-  grid-column: auto;
-}
-.footer-content img:hover {
-  transform: scale(1.1);
-}
-.footer-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 1rem;
-}
-.footer-content p {
-  margin: 0.5rem 0;
-  font-size: 0.9rem; }   

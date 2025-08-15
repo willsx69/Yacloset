@@ -317,47 +317,24 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <footer>
+     <footer>
+    <div className="footer-content">
         <div className="logo-footer">
-          <Image
-            src="/images/logo_transparente.png"
-            alt="Logo"
-            width={60}
-            height={60}
-          />
-          </div>
-          <p>Yacloset - Moda Feminina</p>
+            <img src="/images/logo_transparente.png" alt="Yacloset Logo" />
+        </div>
+        <div className="siga">
+            <p>siga-nos</p>
+        </div>
+        <div className="footer-links">
+            <a href="#"><img src="/images/instagram.jpg" alt="Instagram" /></a>
+            <a href="#"><img src="/images/whatsapp.jpg" alt="WhatsApp" /></a>
+        </div>
+
+
         
-
-
-
-
-
-
-        <div className="footer-content">
-          <h1>siga-nos</h1>
-          <Image
-            src="/images/instagram.jpg"
-            alt="Instagram"
-            width={50}
-            height={50}
-          /> 
-          <Image
-            src="/images/whatsapp.jpg"
-            alt="Whatsapp"
-            width={50}
-            height={50}
-          />
-
-
-          </div>
-
-            
- 
-
-
         <p>© 2023 Yacloset. Todos os direitos reservados.</p>
-      </footer>
+    </div>
+</footer>
     </>
   );
 }
