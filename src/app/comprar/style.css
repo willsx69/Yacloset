@@ -1,0 +1,223 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.header-inner-content {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* BARRA DE PROGRESSO DE ROLAGEM */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #ffffff, #666666);
+  z-index: 1000;
+  transition: width 0.1s ease;
+}
+
+.navbar {
+  background-color: #000000;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+  z-index: 99;
+}
+
+.navbar > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.logo {
+  color: rgb(50, 0, 249);
+}
+
+.logo img {
+  width: 20px;
+  padding-right: 2%;
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+.icons img {
+  width: 30px;
+  cursor: pointer;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+nav ul li {
+  color: #fff;
+  cursor: pointer;
+}
+
+nav ul li:hover {
+  transform: translateY(-5px);
+  transition: all 0.2s ease-in-out;
+  font-weight: bold;
+}
+
+header {
+  background-color: #c7c4c4;
+}
+
+.text-white {
+  font-size: 16px; /* Diminua o tamanho da fonte */
+}
+
+.productCarousel img {
+  margin-top: -rem;
+  margin-right: 1rem;
+  width: 100%; /* Ajuste a largura das imagens do carrossel */
+  max-width: 350px; /* Limite máximo para o tamanho */
+}
+
+/* Estilos para as setas do carrossel */
+.carousel .control-arrow {
+ position: absolute;
+  width: 60px;
+  height: 450px; /* Ajustado para ser mais proporcional */
+  margin: 0 10px;
+  margin-left: 2rem;
+  margin-right: 7rem;
+  top: 50%; /* Centraliza verticalmente */
+  transform: translateY(-50%); /* Ajusta para centralização */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .carousel .control-arrow {
+    padding: 0;
+    margin-top: 10rem;
+    width: 50px; /* Reduz a largura das setas */
+    margin-left: rem;
+    margin-right: -1rem;
+    height: 450px; /* Reduz a altura das setas */
+  }
+
+  .productCarousel img {
+   display: flex;
+  justify-content: flex-start;
+  margin-left: 15px; /* Ajuste esse valor para mover mais à direita */
+    
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+
+  nav {
+    position: absolute;
+    background-color: #2c2c2c;
+    top: 80px;
+    width: 100%;
+    display: none;
+  }
+
+  .show-menu nav {
+    display: block;
+  }
+
+  .header-button-side {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 4rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    text-align: center;
+    padding: 0.8rem;
+  }
+
+  .button-side-left h2 {
+    font-size: 2.5rem;
+  }
+
+  .button-side-left p {
+    font-size: 1rem;
+  }
+}
+
+.side-left {
+  margin-left: 20px; /* Adiciona espaço à esquerda */
+  padding-top: 1rem; /* Espaçamento superior, se necessário */
+}
+
+
+
+
+
+
+
+
+
+.side-left h3 {
+   font-size: 3rem;
+}
+
+
+
+.side-left button {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border-radius: 9999px;
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 150px;
+}
+
+.side-left button:hover{
+  transform: translateY(-20%);
+}
+
+

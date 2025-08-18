@@ -4,6 +4,9 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import "./globals.css";
 
+
+
+
 export default function Home() {
   const [menuAberto, setMenuAberto] = useState(false);
 
@@ -111,7 +114,7 @@ export default function Home() {
         <div className="header-inner-content">
           <div className="logo">
             <Image
-              src="/images/logo_transparente.png"
+              src="/images/logo.png"
               alt="Logo"
               width={60}
               height={60}
@@ -152,8 +155,11 @@ export default function Home() {
         <div className="header--inner--content">
           <div className="header-button-side">
             <div className="button-side-left">
-              <h2>Yacloset Seu estilo, sua essência.</h2>
-              <p>
+              <h1 className="Yacloset">YACLOSET</h1>
+
+              <h4>Yacloset Seu estilo, sua essência.</h4>
+              <br />
+              <p className="description">
                 Moda feminina criada para mulheres que valorizam estilo,
                 autenticidade e conforto. Nossas coleções combinam tendências
                 atuais e qualidade premium, oferecendo peças versáteis para
@@ -316,7 +322,14 @@ export default function Home() {
             </div>
           </div>
         </div>
+     
+     
       </main>
+  
+  
+  
+
+  
      <footer>
     <div className="footer-content">
         <div className="logo-footer">
