@@ -1,6 +1,9 @@
 <<<<<<< HEAD
 # Yacloset
 # 👗 Yacloset - E-commerce de Moda Feminina  **Yacloset** é uma loja virtual moderna desenvolvida com Next.js e React, especializada em moda feminina. Features: design responsivo, grid automático de produtos, menu mobile interativo, otimização de imagens e CSS Grid avançado. Foco em UX elegante e performance.
+
+<img width="1894" height="926" alt="image" src="https://github.com/user-attachments/assets/4ddaf03f-6294-4aef-bd65-752c2cf9aa9b" />
+
 =======
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
