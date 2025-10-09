@@ -106,7 +106,7 @@ export default function Comprar() {
           </div>
           <nav>
             <ul>
-              <a href="http://127.0.0.1:3000/app">
+              <a href="http://127.0.0.1:3000/comprar">
                 {" "}
                 <li>Home</li>{" "}
               </a>
@@ -125,7 +125,6 @@ export default function Comprar() {
                 height={30}
               />
             </a>
-            
             <a href="/carrinho">
               <Image
                 src="/images/menu.png"
@@ -152,7 +151,7 @@ export default function Comprar() {
                   className="productCarousel"
                 >
                   <img
-                    src="/images/produto1.jpeg"
+                    src="/images/produto3.jpeg"
                     alt=""
                     style={{
                       marginTop: "-2.5%",
@@ -160,9 +159,10 @@ export default function Comprar() {
                       width: "125%",
                     }}
                   />
+                  
 
                   <img
-                    src="/images/produto2.jpeg"
+                    src="/images/produto4.jpeg"
                     alt=""
                     style={{ marginLeft: "-10%", width: "125%" }}
                   />
@@ -176,9 +176,7 @@ export default function Comprar() {
               <p>Tamanho Único 36-42</p>
               <p>Tecido Poliamida</p>
               <span>R$ 99,90</span>
-              <div className="mt-4">
-                
-              </div>
+              
 
               <br />
               <button>Comprar</button>
@@ -203,7 +201,7 @@ export default function Comprar() {
             </a>
           </div>
 
-          <p>© 2025 Yacloset. Todos os direitos reservados.</p>
+          <p>© 2023 Yacloset. Todos os direitos reservados.</p>
         </div>
       </footer>
     </>

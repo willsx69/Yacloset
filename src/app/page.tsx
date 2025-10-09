@@ -114,7 +114,7 @@ export default function Home() {
         <div className="header-inner-content">
           <div className="logo">
             <Image
-              src="/images/logo.png"
+              src="/images/logo_transparente.png"
               alt="Logo"
               width={60}
               height={60}
@@ -123,7 +123,7 @@ export default function Home() {
 
           <nav>
             <ul>
-              <li>Home</li>
+              <a href="/Home"><li>Home</li></a>
               <li>Productos</li>
               <li>Sobre</li>
               <li>Contatos</li>
@@ -151,34 +151,7 @@ export default function Home() {
       </div>
 
       {/* Header */}
-      <header>
-        <div className="header--inner--content">
-          <div className="header-button-side">
-            <div className="button-side-left">
-              <h1 className="Yacloset">YACLOSET</h1>
-
-              <h4>Yacloset Seu estilo, sua essência.</h4>
-              <br />
-              <p className="description">
-                Moda feminina criada para mulheres que valorizam estilo,
-                autenticidade e conforto. Nossas coleções combinam tendências
-                atuais e qualidade premium, oferecendo peças versáteis para
-                todas as ocasiões, do casual ao sofisticado.
-              </p>
-              <button>Ver agora &#8594;</button>
-            </div>
-
-            <div className="button-side-right">
-              <Image
-                src="/images/intro.jpeg"
-                alt="Intro Image"
-                width={450}
-                height={450}
-              />
-            </div>
-          </div>
-        </div>
-      </header>
+     
 
       {/* Main - SEÇÃO COM ANIMAÇÕES */}
       <main>
@@ -200,7 +173,7 @@ export default function Home() {
                   <p>Tamanho Único 36-42</p>
                   <p>Tecido Poliamida</p>
                   <span>R$ 99,90</span>
-                  <button>Comprar</button>
+                  <a href="/comprar"><button>Comprar</button></a>
                 </div>
               </div>
 
@@ -217,7 +190,7 @@ export default function Home() {
                   <p>Tamanho Único 36-42</p>
                   <p>Tecido Premium</p>
                   <span>R$ 129,90</span>
-                  <button>Comprar</button>
+                  <a href="/comprar1"><button>Comprar</button></a>
                 </div>
               </div>
 
@@ -234,7 +207,7 @@ export default function Home() {
                   <p>Tamanho Único 36-42</p>
                   <p>Tecido Poliamida</p>
                   <span>R$ 99,90</span>
-                  <button>Comprar</button>
+                  <a href="/comprar2"><button>Comprar</button></a>
                 </div>
               </div>
 
@@ -251,7 +224,7 @@ export default function Home() {
                   <p>Tamanho Único 36-42</p>
                   <p>Tecido Poliamida</p>
                   <span>R$ 99,90</span>
-                  <button>Comprar</button>
+                  <a href="/comprar3"><button>Comprar</button></a>
                 </div>
               </div>
 
@@ -268,13 +241,13 @@ export default function Home() {
                   <p>Tamanho Único 36-42</p>
                   <p>Tecido Poliamida</p>
                   <span>R$ 99,90</span>
-                  <button>Comprar</button>
+                 <a href="/comprar4"> <button>Comprar</button></a>
                 </div>
               </div>
 
               <div className="produto-item">
                 <Image
-                  src="/images/produto10.jpeg"
+                  src="/images/produto12.jpeg"
                   alt="Saia Gisele"
                   width={250}
                   height={350}
@@ -284,7 +257,7 @@ export default function Home() {
                   <p>Tamanho Único 36-42</p>
                   <p>Tecido Poliamida</p>
                   <span>R$ 99,90</span>
-                  <button>Comprar</button>
+                 <a href="/comprar5"><button>Comprar</button></a>
                 </div>
               </div>
 

@@ -152,7 +152,7 @@ export default function Comprar() {
                   className="productCarousel"
                 >
                   <img
-                    src="/images/produto1.jpeg"
+                    src="/images/produto5.jpeg"
                     alt=""
                     style={{
                       marginTop: "-2.5%",
@@ -162,7 +162,7 @@ export default function Comprar() {
                   />
 
                   <img
-                    src="/images/produto2.jpeg"
+                    src="/images/produto6.jpeg"
                     alt=""
                     style={{ marginLeft: "-10%", width: "125%" }}
                   />
@@ -176,11 +176,8 @@ export default function Comprar() {
               <p>Tamanho Único 36-42</p>
               <p>Tecido Poliamida</p>
               <span>R$ 99,90</span>
-              <div className="mt-4">
-                
-              </div>
 
-              <br />
+              <br/>
               <button>Comprar</button>
             </div>
           </div>
@@ -203,7 +200,7 @@ export default function Comprar() {
             </a>
           </div>
 
-          <p>© 2025 Yacloset. Todos os direitos reservados.</p>
+          <p>© 2023 Yacloset. Todos os direitos reservados.</p>
         </div>
       </footer>
     </>

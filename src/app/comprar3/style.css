@@ -54,7 +54,7 @@ body {
 }
 
 .logo img {
-  width: 50px;
+  width: 20px;
   padding-right: 2%;
 }
 
@@ -125,9 +125,9 @@ header {
     padding: 0;
     margin-top: 10rem;
     width: 50px; /* Reduz a largura das setas */
-    margin-left: -1.5rem;
+    margin-left: rem;
     margin-right: -1rem;
-    height: 430px; /* Reduz a altura das setas */
+    height: 450px; /* Reduz a altura das setas */
   }
 
   .productCarousel img {
@@ -187,14 +187,6 @@ header {
   margin-left: 20px; /* Adiciona espaço à esquerda */
   padding-top: 1rem; /* Espaçamento superior, se necessário */
 }
-
-
-
-
-
-
-
-
 
 .side-left h3 {
    font-size: 3rem;
