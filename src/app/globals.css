@@ -495,12 +495,12 @@ h1.Yacloset {
 }
 
 footer {
-    background-color: #000000;  /* Cor de fundo */
-    color: #ffffff;              /* Cor do texto */
-    text-align: center;          /* Centraliza o texto */
-    padding: 1rem;               /* Espaçamento interno */
+    background-color: #000000;  
+    color: #ffffff;              
+    text-align: center;          
+    padding: 1rem;              
     position: relative;
-    width: 100%;                 /* Preenche toda a largura */
+    width: 100%;                 
 }
 
 .logo-footer {
