@@ -1,44 +1,32 @@
-<<<<<<< HEAD
-# Yacloset
-# 👗 Yacloset - E-commerce de Moda Feminina  **Yacloset** é uma loja virtual moderna desenvolvida com Next.js e React, especializada em moda feminina. Features: design responsivo, grid automático de produtos, menu mobile interativo, otimização de imagens e CSS Grid avançado. Foco em UX elegante e performance.
+Yacloset - E-commerce
 
-<img width="1894" height="926" alt="image" src="https://github.com/user-attachments/assets/4ddaf03f-6294-4aef-bd65-752c2cf9aa9b" />
+Yacloset é um projeto de e-commerce desenvolvido com Next.js com foco em praticar desenvolvimento frontend moderno, organização de rotas e construção de aplicações reais.
 
-=======
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Tecnologias
 
-## Getting Started
+Next.js
 
-First, run the development server:
+TypeScript
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+React
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Tailwind CSS
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Funcionalidades
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Listagem de produtos
 
-## Learn More
+Página individual do produto
 
-To learn more about Next.js, take a look at the following resources:
+Sistema de carrinho
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Página de checkout
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Objetivo
 
-## Deploy on Vercel
+Este projeto foi desenvolvido como parte do meu processo de aprendizado em desenvolvimento web, com foco na criação de aplicações reais utilizando boas práticas e estrutura profissional.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Autor
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
->>>>>>> 977eb61 (Initial commit from Create Next App)
+William Breno
+Estudante de Análise e Desenvolvimento de Sistemas
