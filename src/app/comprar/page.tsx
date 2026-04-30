@@ -7,11 +7,28 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 
 import "./style.css";
+import { useCart } from "@/lib/useCart";
+import { Product } from "@/types/cart";
 
 
 
 export default function Comprar() {
   const [menuAberto, setMenuAberto] = useState(false);
+  const { addItem } = useCart();
+
+  const product: Product = {
+    id: "comprar-1",
+    name: "Body Milão",
+    price: 99.90,
+    image: "/images/produto1.jpeg",
+    size: "Único 36-42",
+    color: "Preto",
+  };
+
+  const handleAddToCart = () => {
+    addItem(product);
+    alert("Produto adicionado ao carrinho!");
+  };
 
   useEffect(() => {
     // BARRA DE PROGRESSO DE ROLAGEM
@@ -106,9 +123,8 @@ export default function Comprar() {
           </div>
           <nav>
             <ul>
-              <a href="http://127.0.0.1:3000/app">
-                {" "}
-                <li>Home</li>{" "}
+              <a href="/">
+                <li>Home</li>
               </a>
               <li>Produtos</li>
               <li>Sobre</li>
@@ -181,7 +197,7 @@ export default function Comprar() {
               </div>
 
               <br />
-              <button>Comprar</button>
+              <button onClick={handleAddToCart}>Comprar</button>
             </div>
           </div>
         </div>

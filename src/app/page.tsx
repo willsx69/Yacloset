@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import "./globals.css";
+import Link from "next/link";
+import "@/styles/globals.css";
 
 
 
@@ -113,17 +114,19 @@ export default function Home() {
       <div className={`navbar ${menuAberto ? "show-menu" : ""}`}>
         <div className="header-inner-content">
           <div className="logo">
-            <Image
-              src="/images/logo_transparente.png"
-              alt="Logo"
-              width={60}
-              height={60}
-            />
+            <Link href="/">
+              <Image
+                src="/images/logo_transparente.png"
+                alt="Logo"
+                width={60}
+                height={60}
+              />
+            </Link>
           </div>
 
           <nav>
             <ul>
-              <a href="/Home"><li>Home</li></a>
+              <a href="/"><li>Home</li></a>
               <li>Productos</li>
               <li>Sobre</li>
               <li>Contatos</li>

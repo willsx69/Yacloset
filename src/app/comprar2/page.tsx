@@ -106,9 +106,8 @@ export default function Comprar() {
           </div>
           <nav>
             <ul>
-              <a href="http://127.0.0.1:3000/comprar">
-                {" "}
-                <li>Home</li>{" "}
+              <a href="/">
+                <li>Home</li>
               </a>
               <li>Produtos</li>
               <li>Sobre</li>
